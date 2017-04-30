@@ -5,7 +5,45 @@ author: "Robert Miller"
 ---
 
 ## Date: 4/30/2017
+### IC Brief: Intel Location and Identification Services
+### Visitor Groups Compared Based on Campaign Donation Amounts
 ```{r, echo=FALSE, comment=""}
-head(mtcars)
-plot(mtcars$mpg)
+library(leaflet)
+set.seed(388944)
+
+
+df<- data.frame(names = c("Coal Lobbyist", "Russian Oligarch 1",
+                         "Alt Right Enthusiast",
+                         "Russian Oligarch 2",
+                         "Golf Cart With Nuclear Football",
+                         "Tweet Ghost Writer",
+                         "Secret Service"),
+                lat = runif(7, 
+                            min = 26.6770,
+                            max = 26.6780),
+                lng = runif(7,
+                            min = -80.0371,
+                            max = -80.0369),
+                col=c("black", "red","white",
+                    "red","green","blue",
+                    "gray"),
+                donations= c(200,1000,100,2000,
+                             25,100,100))
+df %>%
+    leaflet() %>%
+    addTiles() %>%
+    addCircleMarkers(color=df$col,weight = 1, radius = sqrt(df$donations)) %>%
+    addLegend(labels = df$names, colors = c("black",
+                                            "red",
+                                            "white",
+                                            "red",
+                                            "green",
+                                            "blue",
+                                            "gray"))
+
+
+#my_map<-my_map %>%
+    #addMarkers(lat=26.6771, lng=-80.0370,
+#               popup="Mar a Lago")
+#my_map
 ```
