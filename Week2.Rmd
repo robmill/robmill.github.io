@@ -7,7 +7,7 @@ author: "Robert Miller"
 ## Date: 4/30/2017
 ### IC Brief: Intel Location and Identification Services
 ### Visitor Groups Compared Based on Campaign Donation Amounts
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE,message=FALSE}
 library(leaflet)
 
 df<- data.frame(names = c("Coal Lobbyist", "Russian Oligarch 1",
