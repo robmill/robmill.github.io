@@ -9,8 +9,6 @@ author: "Robert Miller"
 ### Visitor Groups Compared Based on Campaign Donation Amounts
 ```{r, echo=FALSE}
 library(leaflet)
-set.seed(388944)
-
 
 df<- data.frame(names = c("Coal Lobbyist", "Russian Oligarch 1",
                          "Alt Right Enthusiast",
