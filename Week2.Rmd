@@ -4,4 +4,8 @@ author: "Robert Miller"
 
 ---
 
-# Date: 4/30/2017
+## Date: 4/30/2017
+```{r, echo=FALSE, comment=""}
+head(mtcars)
+plot(mtcars$mpg)
+```
