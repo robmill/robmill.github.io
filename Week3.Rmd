@@ -19,7 +19,7 @@ library(plotly)
 
 ```{r cars, warning=FALSE}
 set.seed(5-19-2015)
-Pitch_Speed<-runif(100, 1, 100)
+Pitch_Speed<-runif(100, 70, 100)
 Result<-runif(100, 1, 100)
 time_z<-rnorm(100, 30, 5)
 
