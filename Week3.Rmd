@@ -12,6 +12,9 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Date: 5/4/2017
 
 ## Strikezone Pitch Speed and Pitch Result
+### 0 - HBP, 1 - strike, 2 - ball, 3 - hit, 4 - HR, 5 - WP
+
+
 
 ```{r plotly install, echo = FALSE, message=FALSE}
 library(plotly)
@@ -20,13 +23,12 @@ library(plotly)
 ```{r cars, warning=FALSE}
 set.seed(5-19-2015)
 Pitch_Speed<-runif(100, 70, 100)
-Result<-runif(100, 1, 100)
+Result<-runif(100, 0, 5)
 time_z<-rnorm(100, 30, 5)
 
 plot_ly(x=~Pitch_Speed, y=~Result, z=~time_z,
         type="scatter3d", color = ~Pitch_Speed, 
-        mode="markers+lines",
-        offset=5*Pitch_Speed^(1/4))
+        mode="markers")
 
 ```
 
