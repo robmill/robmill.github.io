@@ -1,0 +1,34 @@
+---
+title: "Multi_Line_Graph"
+author: "Robert Miller"
+date: "5/5/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Eu Stocks
+```{r eu, echo=FALSE, comment="", include=FALSE}
+library(plotly)
+library(tidyr)
+library(dplyr)
+data("EuStockMarkets")
+
+stocks<-as.data.frame(EuStockMarkets) %>%
+    gather(index, price) %>%
+    mutate(time=rep(time(EuStockMarkets), 4))
+```
+
+```{r EDA, comment=""}
+
+head(stocks)
+
+```
+
+```{r plot}
+
+plot_ly(stocks, x= ~time, y= ~price, color = ~index, type="scatter",
+        mode="lines")
+```
